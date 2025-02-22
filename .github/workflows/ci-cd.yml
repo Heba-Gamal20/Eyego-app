@@ -11,7 +11,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
+      
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v2.0
+        with:
+          version: 'v1.24.0' 
+        id: install
+     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -34,17 +40,10 @@ jobs:
           docker tag eyego:latest $ECR_URI:latest
           docker push $ECR_URI:latest
      
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+      
       
       - name: Update kubeconfig for EKS
-        run: |
-          aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }} --role-arn arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/EKS-cluster-role
-          kubectl get nodes  
+        run: aws eks update-kubeconfig --name EKS-test
 
 
       - name: Deploy to Kubernetes
