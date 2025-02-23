@@ -1,3 +1,6 @@
+![My Image](https://github.com/Heba-Gamal20/Eyego-app/blob/main/EKS_one_pod__1_.png?raw=true)
+
+
 # Eyego-app
 Containerizing and Deploying a Node.js Application using Docker, Kubernetes, and CI/CD Pipelines on AWS and Google Cloud
 ## 📌 Project Overview
