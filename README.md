@@ -28,7 +28,29 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
      1. Initialize a **Node.js project**
       npm init -y  
       npm install express 
-    2. Create server.js:
+    2. Create server.js.
 ### 2️⃣ Containerize the App with Docker
-     1. Create a Dockerfile:
-     2. Build and run the container
+     1. Create a Dockerfile.
+     2. Build and run the container.
+###   3️⃣ Deploy on AWS EKS
+       1. Create an ECR repository
+       2. Authenticate Docker with AWS ECR
+       3. Push the Docker Image to AWS ECR
+       4. Create an AWS EKS Cluster.
+       5. Deploy the App to Kubernetes.
+          *Create a deployment.yaml file
+          *Apply the deployment to Kubernetes
+        6.   Expose the App via LoadBalancer
+           *Create a service.yaml file
+           *Apply the service to Kubernetes
+           *Get the external LoadBalancer IP
+           *Access the app using the external IP
+###  4️⃣ Automate Deployment with GitHub Actions
+      Create .github/workflows/deploy.yml
+
+###   5️⃣ Migrate to Google Cloud (GKE)
+    1.   Create a GKE cluster
+    2.  Build and push Docker image to Google Container Registry
+    3.  Deploy using Kubernetes
+    4.  
+
