@@ -6,5 +6,19 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
 - [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
 - [Step-by-Step Guide](#step-by-step-guide)
+  - [1️⃣ Create a Simple Node.js App](#1️⃣-create-a-simple-nodejs-app)
+  - [2️⃣ Containerize the App with Docker](#2️⃣-containerize-the-app-with-docker)
+  - [3️⃣ Deploy on AWS EKS](#3️⃣-deploy-on-aws-eks)
+  - [4️⃣ Automate Deployment with GitHub Actions](#4️⃣-automate-deployment-with-github-actions)
+  - [5️⃣ Migrate to Google Cloud (GKE) or Alibaba Cloud](#5️⃣-migrate-to-google-cloud-gke-or-alibaba-cloud)
 - [Technologies Used](#technologies-used)
 - [Future Enhancements](#future-enhancements)
+- [Contact & Support](#contact--support)
+
+## 📂 Project Structure
+- 📜 **server.js** – The Node.js web application  
+- 🐳 **Dockerfile** – Docker build instructions  
+- 📄 **deployment.yaml** – Kubernetes Deployment and Service definition  
+- ⚙️ **.github/workflows/deploy.yml** – GitHub Actions CI/CD workflow  
+- 📘 **README.md** – Documentation  
+
