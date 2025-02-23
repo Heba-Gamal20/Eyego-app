@@ -18,7 +18,11 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
 ## 📂 Project Structure
 - 📜 **server.js** – The Node.js web application  
 - 🐳 **Dockerfile** – Docker build instructions  
-- 📄 **deployment.yaml** – Kubernetes Deployment and Service definition  
+- 📄 **deployment.yaml** – Kubernetes Deployment and Service definition
+
+## 🚀 Step-by-Step Guide
+
+### 1️⃣ Create a Simple Node.js App 
 - ⚙️ **.github/workflows/deploy.yml** – GitHub Actions CI/CD workflow  
 - 📘 **README.md** – Documentation  
 
