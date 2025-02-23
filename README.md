@@ -29,4 +29,4 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
       npm init -y  
       npm install express 
     2. Create server.js:
-2️⃣ Containerize the App with Docker
+### 2️⃣ Containerize the App with Docker
