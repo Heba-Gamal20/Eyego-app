@@ -55,8 +55,8 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
     3.  Deploy using Kubernetes
      
 ## 📌 Technologies Used
-🟢 Node.js + Express.js – Web framework
-🐳 Docker – Containerization
-☁️ AWS EKS & Google GKE – Kubernetes deployment
-⚙️ GitHub Actions – CI/CD pipeline
-🏗 Kubernetes – Load balancing and scaling
+ - 🟢 **Node.js + Express.js – Web framework**
+-  **🐳 Docker – Containerization**
+-  **☁️ AWS EKS & Google GKE – Kubernetes deployment**
+-  **⚙️ GitHub Actions – CI/CD pipeline**
+- **🏗 Kubernetes – Load balancing and scaling**
