@@ -26,4 +26,6 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
 
 ### 1️⃣ Create a Simple Node.js App 
      1. Initialize a **Node.js project**
+      npm init -y  
+      npm install express 
 
