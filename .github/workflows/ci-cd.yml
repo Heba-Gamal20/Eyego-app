@@ -44,10 +44,13 @@ jobs:
 
       - name: Update kubeconfig for EKS
         run: |
-          aws eks --region ${{ env.AWS_REGION }} update-kubeconfig --name EKS-test
+          aws eks --region ${{ env.AWS_REGION }} update-kubeconfig --name EKS-test --role-arn arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/EKS-cluster-role
 
       - name: Verify Kubernetes Authentication
-        run: kubectl get nodes
+        run: |
+          aws eks --region ${{ env.AWS_REGION }} get-token --cluster-name EKS-test
+          kubectl config current-context
+          kubectl get nodes
 
       - name: Deploy to Kubernetes
         run: |
