@@ -2,6 +2,7 @@
 Containerizing and Deploying a Node.js Application using Docker, Kubernetes, and CI/CD Pipelines on AWS and Google Cloud
 ## 📌 Project Overview
 This project demonstrates how to develop, containerize, and deploy a **Node.js web application** using **Docker** and **Kubernetes (K8s)** on **AWS EKS** and **Google Kubernetes Engine (GKE)**. It also integrates **CI/CD automation** using **GitHub Actions**.
+🌍 **Application URL**: k8s-default-eyegoapp-c3e42566c9-6dfb84888065202e.elb.us-east-1.amazonaws.com
 ## 📂 Table of Contents
 - [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
@@ -12,8 +13,7 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
   - [4️⃣ Automate Deployment with GitHub Actions](#4️⃣-automate-deployment-with-github-actions)
   - [5️⃣ Migrate to Google Cloud (GKE) or Alibaba Cloud](#5️⃣-migrate-to-google-cloud-gke-or-alibaba-cloud)
 - [Technologies Used](#technologies-used)
-- [Future Enhancements](#future-enhancements)
-- [Contact & Support](#contact--support)
+
 
 ## 📂 Project Structure
 - 📜 **server.js** – The Node.js web application  
@@ -52,5 +52,5 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
     1.   Create a GKE cluster
     2.  Build and push Docker image to Google Container Registry
     3.  Deploy using Kubernetes
-    4.  
+     
 
