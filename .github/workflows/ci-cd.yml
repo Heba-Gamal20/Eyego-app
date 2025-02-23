@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+env:
+  AWS_REGION: us-east-1
+  AWS_ACCOUNT_ID: 442426864694
+  ECR_Name: eyego
+  ECR_NAME: 442426864694.dkr.ecr.us-east-1.amazonaws.com/eyego:latest
 
 jobs:
   build-and-deploy:
