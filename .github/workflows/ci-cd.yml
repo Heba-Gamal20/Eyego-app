@@ -1,52 +1,54 @@
 name: Deploy to AWS EKS
- 
+
 on:
   push:
     branches:
       - main
- 
+
 env:
   AWS_REGION: us-east-1
   AWS_ACCOUNT_ID: 442426864694
-ECR_NAME: 442426864694.dkr.ecr.us-east-1.amazonaws.com/eyego:latest
- 
+  ECR_NAME: 442426864694.dkr.ecr.us-east-1.amazonaws.com/eyego
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
- 
+
       - name: Install kubectl
-        uses: azure/setup-kubectl@v2
+        uses: azure/setup-kubectl@v3
         with:
           version: 'v1.24.0'
- 
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
- 
+
       - name: Login to Amazon ECR
         run: |
           for i in {1..5}; do
             aws ecr get-login-password --region ${{ env.AWS_REGION }} | \
-docker login --username AWS --password-stdin ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com && break || sleep 5
+            docker login --username AWS --password-stdin ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com && break || sleep 5
           done
- 
+
       - name: Build and Push Docker Image
         run: |
-ECR_URI="${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/eyego"
           docker build -t eyego .
-          docker tag eyego:latest $ECR_URI:latest
-          docker push $ECR_URI:latest
- 
+          docker tag eyego:latest ${{ env.ECR_NAME }}:latest
+          docker push ${{ env.ECR_NAME }}:latest
+
       - name: Update kubeconfig for EKS
         run: |
           aws eks --region ${{ env.AWS_REGION }} update-kubeconfig --name EKS-test
- 
+
+      - name: Verify Kubernetes Authentication
+        run: kubectl get nodes
+
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f deployment.yaml
