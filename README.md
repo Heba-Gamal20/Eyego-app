@@ -30,3 +30,5 @@ This project demonstrates how to develop, containerize, and deploy a **Node.js w
       npm install express 
     2. Create server.js:
 ### 2️⃣ Containerize the App with Docker
+     1. Create a Dockerfile:
+     2. Build and run the container
